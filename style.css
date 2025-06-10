@@ -1,0 +1,386 @@
+/* General Body & Container Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcf8f8; /* Very light, warm off-white */
+    color: #4a4a4a; /* Soft dark grey */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: linear-gradient(135deg, #fcefee 0%, #fae6e9 100%); /* Gentle pinkish gradient */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    margin: 50px auto; /* Centered with vertical margin */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For animations */
+}
+
+/* Header Styling */
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: #9c27b0; /* A soft plum/lavender */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+    letter-spacing: 0.02em;
+}
+
+header p {
+    font-size: 1.3em;
+    color: #6a1b9a; /* Deeper plum */
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+    text-align: left; /* Align text within sections to the left */
+}
+
+/* Message Card Styling (for all main content) */
+.message-card {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.message-card p {
+    font-size: 1.1em;
+    margin-bottom: 18px;
+    color: #555;
+}
+
+.message-card p strong {
+    color: #9c27b0; /* Highlight important words */
+    font-weight: 700;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 30px;
+    color: #777;
+    font-size: 1em;
+}
+
+/* Polaroid Grid for Love Notes */
+.love-notes-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #9c27b0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.polaroid-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.polaroid-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 15px 15px 25px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: rotate(var(--rotation, 0deg)); /* Apply rotation */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-decoration: none;
+    color: #555;
+    text-align: center;
+    width: 150px; /* Fixed width for polaroid */
+    flex-shrink: 0;
+    position: relative; /* For absolute positioning of pseudo-elements */
+}
+
+.polaroid-card:nth-child(1) { --rotation: -3deg; }
+.polaroid-card:nth-child(2) { --rotation: 2deg; }
+.polaroid-card:nth-child(3) { --rotation: -1deg; }
+
+.polaroid-card:hover {
+    transform: rotate(var(--rotation, 0deg)) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10; /* Bring hovered card to front */
+}
+
+.polaroid-card .polaroid-image-placeholder {
+    width: 100%;
+    height: 120px; /* Height for the image area */
+    background-color: #eee;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    color: #aaa;
+    position: relative;
+    overflow: hidden; /* For image within placeholder */
+}
+
+/* Example background images for polaroids */
+.polaroid-image-placeholder.note1 { background-image: url('https://via.placeholder.com/150x120/f0d9e9/9c27b0?text=Joy'); background-size: cover; background-position: center;}
+.polaroid-image-placeholder.note2 { background-image: url('https://via.placeholder.com/150x120/e0d9f0/6a1b9a?text=Strength'); background-size: cover; background-position: center;}
+.polaroid-image-placeholder.note3 { background-image: url('https://via.placeholder.com/150x120/d9f0e0/508050?text=Hope'); background-size: cover; background-position: center;}
+/* You can replace these with actual small images if you upload them */
+
+.polaroid-card p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    margin: 0;
+    color: #6a1b9a;
+}
+
+/* Navigation Buttons */
+.navigation-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.navigation-section p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-button {
+    background-color: #dda0dd; /* Light plum */
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
+
+.nav-button:hover {
+    background-color: #b160b1; /* Darker plum on hover */
+    transform: translateY(-3px);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+}
+
+/* Specific styling for love note pages */
+.note-page {
+    justify-content: center; /* Center content vertically on note pages */
+    align-items: center;
+}
+
+.message-only-container {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 600px; /* Slightly narrower for single messages */
+}
+
+.note-page .message-card {
+    text-align: center; /* Center text on note pages */
+    padding: 40px;
+}
+
+.note-page .message-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #9c27b0;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.note-page .message-card p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.nav-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    background-color: #e0b0d9; /* A light, warm pink */
+    color: #6a1b9a;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em;
+}
+
+.nav-links a:hover {
+    background-color: #cc99c9; /* Slightly darker pink */
+    transform: translateY(-2px);
+}
+
+.back-button {
+    background-color: #f0f0f0 !important;
+    color: #777 !important;
+}
+
+.back-button:hover {
+    background-color: #e8e8e8 !important;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1.0s; }
+.delay-6 { animation-delay: 1.2s; }
+.delay-7 { animation-delay: 1.4s; }
+.delay-8 { animation-delay: 1.6s; }
+.delay-9 { animation-delay: 1.8s; }
+.delay-10 { animation-delay: 2.0s; }
+.delay-11 { animation-delay: 2.2s; }
+.delay-12 { animation-delay: 2.4s; }
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        margin: 30px auto;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .message-card {
+        padding: 25px;
+    }
+
+    .message-card p {
+        font-size: 1em;
+    }
+
+    .love-notes-section h2 {
+        font-size: 1.8em;
+    }
+
+    .polaroid-card {
+        width: 120px;
+        padding: 10px 10px 20px 10px;
+    }
+
+    .polaroid-card .polaroid-image-placeholder {
+        height: 100px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-button {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .note-page .message-card h2 {
+        font-size: 2em;
+    }
+
+    .note-page .message-card p {
+        font-size: 1.1em;
+    }
+
+    .nav-links a {
+        width: 80%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .message-card {
+        padding: 15px;
+    }
+
+    .polaroid-grid {
+        gap: 15px;
+    }
+
+    .polaroid-card {
+        width: 100px;
+        padding: 8px 8px 15px 8px;
+    }
+
+    .polaroid-card .polaroid-image-placeholder {
+        height: 80px;
+    }
+}
